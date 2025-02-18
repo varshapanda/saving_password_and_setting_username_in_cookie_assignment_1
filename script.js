@@ -20,4 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // 4. Display the count on the webpage
 
   // your code here
+  let count = getCookie('count');
+  if(count==null){
+    count=1;
+  }
+  else{
+    count++;
+  }
+  setCookie('count', count, 1);
+  document.getElementById('countDisplay').textContent=`You have visited this page ${count} times`;
 });
